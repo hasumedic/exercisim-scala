@@ -32,12 +32,14 @@ object House {
 
   def rhyme: String = {
     def prepareRhyme(first: String, rest: List[String]): String = {
-      if (rest.isEmpty) first + "\n\n"
-      else (List(first) ++ rest).mkString("\n") + "\n\n"
+      if (rest.isEmpty) first
+      else (List(first) ++ rest).mkString("\n")
     }
 
+    def appendRhymeEnding(rhyme: String): String = rhyme + "\n\n"
+
     def buildRhyme(rhyme: String, beginning: List[String], tail: List[String]): String = {
-      val currentRhyme: String = prepareRhyme(beginning.head, tail)
+      val currentRhyme: String = appendRhymeEnding(prepareRhyme(beginning.head, tail))
       val accumulatedRhyme = currentRhyme + rhyme
 
       if (tail.isEmpty) accumulatedRhyme
