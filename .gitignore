@@ -1,6 +1,6 @@
 */target
 */project
-*/.idea
+*.idea
 .keep
-.sc
-.log
+*.sc
+*.log
